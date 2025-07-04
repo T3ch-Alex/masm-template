@@ -79,7 +79,7 @@ main64.exe
 
 ---
 
-With this setup, you have a complete MASM Assembly development environment in VS Code, supporting x86 and x64 with integrated build, run, and debug. Happy hacking! 🚀
+With this setup, you have a complete MASM Assembly development environment in VS Code, supporting x86 and x64 with integrated build, run, and debug.
 
 # Assembly Project (Portuguese)
 
