@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build MASM x86",
+      "type": "shell",
+      "command": "${workspaceFolder}\\build.bat",
+      "group": "build",
+      "problemMatcher": [],
+    },
+    {
+      "label": "Build MASM x64",
+      "type": "shell",
+      "command": "${workspaceFolder}\\build_x64.bat",
+      "group": "build",
+      "problemMatcher": [],
+    }
+  ]
+}
