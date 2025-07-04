@@ -1,4 +1,87 @@
-# Assembly Project
+# Assembly Project (English)
+
+This project demonstrates how to compile, link, and debug Assembly code (MASM) in VS Code for both **x86** and **x64** architectures on Windows.
+
+## Prerequisites
+
+* **VS Code** installed.
+
+* VS Code extensions:
+
+  * **ASM Code Lens** (for syntax highlighting, IntelliSense, and Code Lens for `.asm`).
+  * **C/C++** (Microsoft) (to enable the `cppvsdbg` debugger).
+
+* **Visual Studio Build Tools** (including `ml.exe`, `ml64.exe`, and `link.exe`).
+
+  * Make sure the **"Desktop development with C++"** workload is installed.
+
+## Project Structure
+
+```
+assembly-projects/
+├── test/
+│   ├── main.asm         # Your Assembly code
+│   ├── build.bat        # Script to build x86
+│   ├── build_x64.bat    # Script to build x64
+│   └── .vscode/
+│       ├── tasks.json   # Build tasks configuration
+│       └── launch.json  # Debug configuration
+```
+
+## Building
+
+1. Open the project folder in VS Code.
+2. Press `Ctrl+Shift+B` to open the **Build Tasks** menu.
+3. Select one of the options:
+
+   * **Build x86** (runs `build.bat` and generates `main.exe`).
+   * **Build x64** (runs `build_x64.bat` and generates `main64.exe`).
+
+After completion, you will have the corresponding executable:
+
+* `main.exe` for x86
+* `main64.exe` for x64
+
+### Running
+
+In the integrated terminal or Windows Command Prompt, run:
+
+```bat
+# x86
+main.exe
+
+# x64
+main64.exe
+```
+
+## Debugging in VS Code
+
+1. Ensure you compiled with debug symbols (the scripts use `/Zi` and `/DEBUG`).
+2. Go to **Run & Debug** (`Ctrl+Shift+D`).
+3. Select the **Debug Assembly (MASM)** configuration.
+4. Press **F5** to start debugging.
+
+### Breakpoints
+
+* To set a breakpoint, click in the left gutter or place the cursor on a line and press **F9**.
+* If the marker doesn’t appear, enable it in `settings.json`:
+
+  ```json
+  "debug.allowBreakpointsEverywhere": true
+  ```
+
+### Inspecting Registers
+
+* During a debug session, open the **Registers** panel:
+
+  * In the debug pane, click `...` → **View** → check **Registers**.
+* The registers (`EAX`, `EBX`, `ECX`, `RAX`, etc.) will be displayed and updated as you step through.
+
+---
+
+With this setup, you have a complete MASM Assembly development environment in VS Code, supporting x86 and x64 with integrated build, run, and debug. Happy hacking! 🚀
+
+# Assembly Project (Portuguese)
 
 Este projeto demonstra como compilar, linkar e depurar código Assembly (MASM) no VS Code para as arquiteturas **x86** e **x64** usando o ambiente Windows.
 
@@ -78,5 +161,3 @@ main64.exe
 * Os registradores (`EAX`, `EBX`, `ECX`, `RAX`, etc.) serão exibidos e atualizados conforme você avança.
 
 ---
-
-Com isso, você tem um ambiente completo para desenvolvimento Assembly (MASM) no VS Code, suportando x86 e x64 com build, execução e depuração integrados. Bom hacking! 🚀
